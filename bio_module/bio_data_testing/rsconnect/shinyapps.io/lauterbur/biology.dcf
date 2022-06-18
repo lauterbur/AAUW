@@ -1,0 +1,13 @@
+name: biology
+title: biology
+username:
+account: lauterbur
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6003157
+bundleId: 5765232
+url: https://lauterbur.shinyapps.io/biology/
+when: 1649133766.2994
+lastSyncTime: 1649133766.29941
+asMultiple: FALSE
+asStatic: FALSE

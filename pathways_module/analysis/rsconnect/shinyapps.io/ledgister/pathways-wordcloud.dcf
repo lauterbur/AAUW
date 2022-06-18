@@ -1,0 +1,13 @@
+name: pathways-wordcloud
+title: pathways-wordcloud
+username:
+account: ledgister
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6108248
+bundleId: 5807693
+url: https://ledgister.shinyapps.io/pathways-wordcloud/
+when: 1650228692.65673
+lastSyncTime: 1650228692.65675
+asMultiple: FALSE
+asStatic: FALSE

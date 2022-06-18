@@ -1,0 +1,13 @@
+name: physics
+title: physics
+username:
+account: lauterbur
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6102048
+bundleId: 5804197
+url: https://lauterbur.shinyapps.io/physics/
+when: 1650083879.26431
+lastSyncTime: 1650083879.26433
+asMultiple: FALSE
+asStatic: FALSE

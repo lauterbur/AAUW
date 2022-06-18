@@ -1,0 +1,13 @@
+name: math_data_collection
+title: math_data_collection
+username:
+account: ledgister
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6483160
+bundleId: 6004497
+url: https://ledgister.shinyapps.io/math_data_collection/
+when: 1655156678.51521
+lastSyncTime: 1655156678.51524
+asMultiple: FALSE
+asStatic: FALSE

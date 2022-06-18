@@ -1,0 +1,13 @@
+name: math_data_collection
+title: math_data_collection
+username:
+account: lauterbur
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6003194
+bundleId: 6004493
+url: https://lauterbur.shinyapps.io/math_data_collection/
+when: 1655156594.73042
+lastSyncTime: 1655156594.73043
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,26 @@
+{
+    "id": "039DEECD",
+    "path": "~/Desktop/AAUW_2022/math_module/math_module/app.R",
+    "project_path": "app.R",
+    "type": "r_source",
+    "hash": "1209899708",
+    "contents": "",
+    "dirty": false,
+    "created": 1648919703062.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "402,0",
+        "scrollLine": "159"
+    },
+    "folds": "167|25|398|0|\n",
+    "lastKnownWriteTime": 1648920957,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1648927790023,
+    "read_only": false,
+    "read_only_alternatives": []
+}
