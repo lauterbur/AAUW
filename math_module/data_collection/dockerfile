@@ -29,7 +29,7 @@ RUN R -q -e "install.packages('DT')"
 RUN mkdir /root/data_collection
 COPY app.R /root/data_collection
 
-COPY Rprofile.site /usr/local/lib/R/etc/
+#COPY Rprofile.site /usr/local/lib/R/etc/
 
 EXPOSE 3838
 
