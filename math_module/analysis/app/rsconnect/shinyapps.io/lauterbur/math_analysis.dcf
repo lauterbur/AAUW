@@ -5,9 +5,9 @@ account: lauterbur
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6003217
-bundleId: 6049500
+bundleId: 6049528
 url: https://lauterbur.shinyapps.io/math_analysis/
-when: 1656394147.08494
-lastSyncTime: 1656394147.08499
+when: 1656395975.14603
+lastSyncTime: 1656395975.14606
 asMultiple: FALSE
 asStatic: FALSE

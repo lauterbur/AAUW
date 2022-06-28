@@ -34,7 +34,7 @@ ui <- fixedPage(
                             )
                         ),
                         fixedRow(
-                            radioButtons("houseGroup", "Group by house type?",
+                            radioButtons("houseGroup", "Group by enhancement?",
                                          c("No" = "no",
                                            "Yes" = "yes")
                                         ),
@@ -151,19 +151,26 @@ server <- function(input, output) {
                         xlab("Total cost ($)") +
                         ylab("Total number of people housed") +
                         labs(title="Effect of total cost on number of people housed"),
-                "yes"= data_long %>%
-                        select(-c(totalHouses)) %>%
-                        pivot_wider(names_from=c(amenity),
-                                    values_from=number_amenity) %>%
-                        mutate(count_amenity=rowSums(.[c("wc","garden","energy")]!=0)) %>%
-                        ggplot() +
-                        aes(x=totalCost, y=totalPeople) +
-                        geom_point(aes(color=factor(count_amenity))) +
-                        theme_bw() +
-                        xlab("Total cost ($)") +
-                        ylab("Total number of people housed") +
-                        labs(title="Effect of total cost on number of people housed, by enhancement",
-                             color="Number of enhancements\nprovided across all houses")
+                "yes"= ggplot(data_long, aes(x=totalCost, y=totalPeople)) +
+                 geom_point() +
+                 theme_bw() +
+                 xlab("Total cost ($)") +
+                 ylab("Total number of people housed") +
+                 labs(title="Effect of total cost on number of people housed")
+                 # data_long %>%
+                #         select(-c(totalHouses)) %>%
+                #         pivot_wider(names_from=c(amenity),
+                #                     values_from=number_amenity) %>%
+                #         group_by(id, totalCost, totalPeople, type) %>%
+                #         mutate(count_amenity=rowSums(.[c("wc","garden","energy")]!=0)) %>%
+                #         ggplot() +
+                #         aes(x=totalCost, y=totalPeople) +
+                #         geom_point(aes(color=factor(count_amenity))) +
+                #         theme_bw() +
+                #         xlab("Total cost ($)") +
+                #         ylab("Total number of people housed") +
+                #         labs(title="Effect of total cost on number of people housed, by enhancement",
+                #              color="Number of enhancements\nprovided across all houses")
               )
     })
     
