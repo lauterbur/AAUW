@@ -22,14 +22,14 @@ RUN apt-get update && apt-get install -y \
 # basic shiny functionality
 RUN R -q -e "install.packages(c('shiny', 'rmarkdown'))"
 
-# install dependencies of the euler app
+# install dependencies of the app
 RUN R -q -e "install.packages('DT')"
 
 # copy the app to the image
 RUN mkdir /root/data_collection
-COPY app.R /root/data_collection
+COPY app /root/data_collection
 
-#COPY Rprofile.site /usr/local/lib/R/etc/
+COPY Rprofile.site /usr/local/lib/R/etc/
 
 EXPOSE 3838
 

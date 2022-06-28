@@ -76,10 +76,9 @@ server <- function(input, output) {
   
     data <- read_sheet(dataURL)
     data_long <- data %>%
-      select(c(2:17)) %>%
+      select(c(2:16)) %>%
       rename_at(vars(everything()), 
                 ~c("totalHouses",
-                   "totalPeople",
                    "totalTiny",
                    "totalRow",
                    "totalFree",
@@ -93,7 +92,7 @@ server <- function(input, output) {
                    "freeGarden",
                    "freeEnergy",
                    "totalCost",
-                   "totalPeople2")) %>%
+                   "totalPeople")) %>%
         dplyr::mutate(id=1:n()) %>%
         pivot_longer(cols=c(starts_with("tiny"),starts_with("row"),starts_with("free")),
                      names_to="amenity",
