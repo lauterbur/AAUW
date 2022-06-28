@@ -80,20 +80,28 @@ server <- function(input, output) {
       rename_at(vars(everything()), 
                 ~c("totalHouses",
                    "totalTiny",
-                   "totalRow",
-                   "totalFree",
                    "tinyWC",
                    "tinyGarden",
                    "tinyEnergy",
+                   "totalRow",
                    "rowWC",
                    "rowGarden",
                    "rowEnergy",
+                   "totalFree",
                    "freeWC",
                    "freeGarden",
                    "freeEnergy",
                    "totalCost",
                    "totalPeople")) %>%
+        rowwise() %>%
+        dplyr::mutate(totalHouses=sum(totalTiny,totalRow,totalFree),
+                      totalPeople=sum(totalTiny*1,totalRow*3,totalFree*5)) %>%
+        ungroup() %>%
         dplyr::mutate(id=1:n()) %>%
+        # pivot_longer(cols=c(starts_with("tiny"),starts_with("row"),starts_with("free")),
+        #              names_to=c(".value","amenity"),
+        #              names_pattern="(^[a-z]+)(.*)")
+      
         pivot_longer(cols=c(starts_with("tiny"),starts_with("row"),starts_with("free")),
                      names_to="amenity",
                      values_to="number_amenity") %>%
@@ -108,8 +116,15 @@ server <- function(input, output) {
     
     # make plots
     output$peoplePlot <- renderPlot({ # DOUBLE CHECK THAT THIS OUTPUT MAKES SENSE BECAUSE OF LONG FORMAT
-        ggplot(data_long, aes(totalPeople, color=type, fill=type), group=id) +
-            geom_histogram(binwidth=2) +
+        data_long %>%
+          distinct(totalHouses,totalCost,totalPeople,type,number_house) %>%
+          mutate(peoplePerHouse=ifelse(type=="tiny",1*number_house,
+                                    ifelse(type=="row",3*number_house,
+                                           ifelse(type=="free",5*number_house,
+                                                  NA)))) %>%
+          group_by(type) %>%
+          ggplot(aes(totalPeople, weights=peoplePerHouse)) +
+            geom_histogram(binwidth=2,aes(fill=type)) +
             scale_x_continuous(breaks=pretty_breaks()) +
             xlab("Total number of people housed") +
             theme_bw() +
@@ -117,8 +132,11 @@ server <- function(input, output) {
     })
     
     output$housePlot <- renderPlot({ # DOUBLE CHECK THAT THIS OUTPUT MAKES SENSE BECAUSE OF LONG FORMAT
-        ggplot(data_long, aes(totalHouses, color=type, fill=type), group=id) +
-            geom_histogram(binwidth=2) +
+      data_long %>%
+        distinct(totalHouses,totalCost,totalPeople,type,number_house) %>%
+        group_by(type) %>%
+        ggplot(aes(totalPeople, weights=number_house)) +
+            geom_histogram(binwidth=2,aes(fill=type)) +
             scale_x_continuous(breaks=pretty_breaks()) +
             xlab("Total number of houses built") +
             theme_bw() +
