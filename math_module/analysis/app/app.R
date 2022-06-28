@@ -155,9 +155,7 @@ server <- function(input, output) {
                         select(-c(totalHouses)) %>%
                         pivot_wider(names_from=c(amenity),
                                     values_from=number_amenity) %>%
-                        group_by(id, totalCost, totalPeople, type) %>%
-                        dplyr::summarise(n=n()) %>%
-                        dplyr::summarise(count_amenity=sum(n)) %>%
+                        mutate(count_amenity=rowSums(.[c("wc","garden","energy")]!=0)) %>%
                         ggplot() +
                         aes(x=totalCost, y=totalPeople) +
                         geom_point(aes(color=factor(count_amenity))) +
@@ -193,8 +191,7 @@ server <- function(input, output) {
             #pivot_wider(names_from=type,
              #           values_from=number_house) %>%
             group_by(id, totalPeople, type) %>%
-            dplyr::summarise(n=n()) %>%
-            dplyr::summarise(count_amenity=sum(n)) %>%
+            mutate(count_amenity=rowSums(.[c("wc","garden","energy")]!=0)) %>%
             mutate(count_amenity=as.factor(count_amenity)) %>%
             ungroup() %>%
             group_by(count_amenity) %>%
