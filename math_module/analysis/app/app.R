@@ -12,7 +12,7 @@ library(forcats)
 # gs4_auth()
 # list.files(".secrets/")
 # gs4_deauth()
-# gs4_auth(cache = ".secrets", email = "elise.lauterbur@gmail.com")
+gs4_auth(cache = ".secrets", email = "elise.lauterbur@gmail.com")
 
 dataURL <- "https://docs.google.com/spreadsheets/d/1Jxy-6f-RbHFttzZ2ZJsPUYe6Nj3rIWz3bF-tb5AzHLY/edit?usp=sharing"
 # Define UI for application 
