@@ -16,14 +16,14 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 
 # system library dependency for the euler app
 RUN apt-get update && apt-get install -y \
-    libmpfr-dev \
+    libmpfr-dev libxml2 libxslt-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # basic shiny functionality
 RUN R -q -e "install.packages(c('shiny', 'rmarkdown'))"
 
 # install dependencies of the app
-RUN R -q -e "install.packages(c('DT','googlesheets4', 'tidyverse', 'ggplot2', 'scales', 'forcats'))"
+RUN R -q -e "install.packages(c('googlesheets4', 'tidyverse', 'ggplot2', 'scales', 'forcats'))"
 
 # copy the app to the image
 RUN mkdir /root/analysis
