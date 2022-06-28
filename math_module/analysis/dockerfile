@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y \
 RUN R -q -e "install.packages(c('shiny', 'rmarkdown'))"
 
 # install dependencies of the app
-RUN R -q -e "install.packages(c('googlesheets4', 'tidyverse', 'ggplot2', 'scales', 'forcats'))"
+RUN R -q -e "install.packages(c('googlesheets4', 'tidyverse', 'ggplot2', 'scales', 'forcats', 'plyr'))"
 
 # copy the app to the image
 RUN mkdir /root/analysis

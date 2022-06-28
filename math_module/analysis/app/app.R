@@ -70,7 +70,7 @@ server <- function(input, output) {
     }
     data_sum<-ddply(data, groupnames, .fun=summary_func,
                     varname)
-    data_sum <- rename(data_sum, c("mean" = varname))
+    data_sum <- rename(data_sum, c("mean" = paste(varname)))
     return(data_sum)
   }
   
