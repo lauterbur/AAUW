@@ -1,5 +1,3 @@
-#
-
 library(shiny)
 library(googlesheets4)
 library(ggplot2)
@@ -7,14 +5,15 @@ library(tidyverse)
 library(scales)
 library(forcats)
 
-dataURL <- "https://docs.google.com/spreadsheets/d/1aQQEHSNAnLhGVN4ywWG7ojlYORfyhJV_x_tmp5o8O6k/edit?usp=sharing"
 
-# setwd("/home/lauterbur/Desktop/AAUW_2022/bio_module/bio_data_testing/")
+setwd("/home/lauterbur/Desktop/AAUW_2022/bio_module/bio_analysis/")
 # options(gargle_oauth_cache = ".secrets")
 # gs4_auth()
 # list.files(".secrets/")
 # gs4_deauth()
 gs4_auth(cache = ".secrets", email = "elise.lauterbur@gmail.com")
+
+dataURL <- "https://docs.google.com/spreadsheets/d/1aQQEHSNAnLhGVN4ywWG7ojlYORfyhJV_x_tmp5o8O6k/edit?usp=sharing"
 
 # Define UI for application
 ui <- fixedPage(title="Data analysis for genetic and environmental diabetes risk",
