@@ -6,7 +6,7 @@ library(scales)
 library(forcats)
 
 
-#setwd("/home/lauterbur/Desktop/AAUW_2022/bio_module/bio_analysis/")
+# setwd("/home/lauterbur/Desktop/AAUW_2022/bio_module/bio_analysis/")
 # options(gargle_oauth_cache = ".secrets")
 # gs4_auth()
 # list.files(".secrets/")
