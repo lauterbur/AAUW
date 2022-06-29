@@ -1,0 +1,13 @@
+name: chem
+title: chem
+username:
+account: lauterbur
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6003143
+bundleId: 5765274
+url: https://lauterbur.shinyapps.io/chem/
+when: 1649135019.10059
+lastSyncTime: 1649135019.1006
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,11 @@
+name: chem_data_analysis
+title: chem_data_analysis
+username:
+account: lauterbur
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6002910
+bundleId: 5760468
+url: https://lauterbur.shinyapps.io/chem_data_analysis/
+when: 1649024118.70077
+lastSyncTime: 1649024118.70078
