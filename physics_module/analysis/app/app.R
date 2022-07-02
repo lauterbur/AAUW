@@ -74,7 +74,7 @@ server <- function(input, output) {
                        col_types="c")
     data <- data %>%
       mutate(id=row_number())
-    colnames(data) <-c("time","notice1","interval1","longfreq","shortfreq","notice2","lowlength","interval2","highlength","freqchoices","lengthchoices","freqpair","id")
+    colnames(data) <-c("time","notice1","interval1","longfreq","shortfreq","notice2","lowlength","interval2","highlength","freqchoices","lengthchoices","strings","id")
     data_long<-data %>%
       pivot_longer(names_to="freq", cols=c("longfreq","shortfreq"),values_to="freqvalue") %>%
       pivot_longer(names_to="length", cols=c("lowlength","highlength"),values_to="lengthvalue") %>%
