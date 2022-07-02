@@ -8,7 +8,7 @@ library(scales)
 library(forcats)
 library(ggpubr)
 
-# setwd("/home/lauterbur/Desktop/AAUW_2022/math_module/analysis")
+# setwd("/home/lauterbur/Desktop/AAUW_2022/physics_module/analysis")
 # options(gargle_oauth_cache = ".secrets")
 # gs4_auth()
 # list.files(".secrets/")
