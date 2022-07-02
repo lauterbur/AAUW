@@ -70,8 +70,9 @@ server <- function(input, output) {
     return(data_sum)
   }
   
-    data <- read_sheet(dataURL,
-                       col_types="c")
+    data <- read_sheet(dataURL)
+                       #,
+                       #col_types="c")
     data <- data %>%
       mutate(id=row_number())
     colnames(data) <-c("time","notice1","interval1","longfreq","shortfreq","notice2","lowlength","interval2","highlength","freqchoices","lengthchoices","id")
