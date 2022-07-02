@@ -15,6 +15,7 @@ library(forcats)
 gs4_auth(cache = ".secrets", email = "elise.lauterbur@gmail.com")
 
 dataURL <- "https://docs.google.com/spreadsheets/d/1Jxy-6f-RbHFttzZ2ZJsPUYe6Nj3rIWz3bF-tb5AzHLY/edit?usp=sharing"
+
 # Define UI for application 
 ui <- fixedPage(
     tags$style(type = "text/css", ".irs-grid-pol.small {height: 0px;}"),
