@@ -1,3 +1,6 @@
 [submodule "physics_module/string-wave"]
 	path = physics_module/string-wave
 	url = https://github.com/lauterbur/lauterbur.github.io/tree/main/AAUW/physics/string-wave
+[submodule "lauterbur.github.io"]
+	path = lauterbur.github.io
+	url = https://github.com/lauterbur/lauterbur.github.io
