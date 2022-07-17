@@ -26,11 +26,11 @@ RUN R -q -e "install.packages(c('shiny', 'rmarkdown'))"
 RUN R -q -e "install.packages(c('googlesheets4', 'tidyverse', 'wordcloud', 'tm'))"
 
 # copy the app to the image
-RUN mkdir /root/pathways_module
-COPY app /root/pathways_module
+RUN mkdir /root/pathways
+COPY app /root/pathways
 
 COPY Rprofile.site /usr/local/lib/R/etc/
 
 EXPOSE 3838
 
-CMD ["R", "-q", "-e", "shiny::runApp('/root/pathways_module')"]
+CMD ["R", "-q", "-e", "shiny::runApp('/root/pathways')"]
